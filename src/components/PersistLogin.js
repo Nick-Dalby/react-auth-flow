@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
-import useRefreshToken from '../hooks/useRefreshToken'
 import useLocalStorage from '../hooks/useLocalStorage'
+import useRefreshToken from '../hooks/useRefreshToken'
 
 const PersistLogin = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -26,15 +26,25 @@ const PersistLogin = () => {
 
     !auth?.accessToken ? verifyRefreshToken() : setIsLoading(false)
 
-    return () => isMounted = false
-  }, [])
+    return () => (isMounted = false)
+  }, [auth, refresh])
 
   useEffect(() => {
     console.log(`isloading: ${isLoading}`)
     console.log(`aT: ${JSON.stringify(auth?.accessToken)}`)
-  }, [isLoading])
+  }, [auth, isLoading])
 
-  return <>{!persist ? <Outlet /> : isLoading ? <article aria-busy="true"></article> : <Outlet />}</>
+  return (
+    <>
+      {!persist ? (
+        <Outlet />
+      ) : isLoading ? (
+        <article aria-busy="true"></article>
+      ) : (
+        <Outlet />
+      )}
+    </>
+  )
 }
 
 export default PersistLogin
