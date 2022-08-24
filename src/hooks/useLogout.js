@@ -7,9 +7,10 @@ const useLogout = () => {
   const logout = async () => {
     setAuth({})
     try {
-      const response = await axios('/logout', { // eslint-disable-line no-eval
+      const response = await axios('/logout', {
         withCredentials: true,
       })
+      console.log(response);
     } catch (err) {
       console.error(err)
     }
