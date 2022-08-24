@@ -1,7 +1,6 @@
 {
   "name": "auth-flow",
   "version": "0.1.0",
-  "homepage": "https://nick-dalby.github.io/react-auth-flow",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
