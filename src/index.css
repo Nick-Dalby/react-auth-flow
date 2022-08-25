@@ -43,3 +43,9 @@
   margin-bottom: 0.5rem;
 }
 
+.switcher {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 50%;
+}
