@@ -1,5 +1,5 @@
 import axios from 'axios'
-const BASE_URL = 'https://enigmatic-meadow-32236.herokuapp.com'
+const BASE_URL = 'https://auth-server-production.up.railway.app/'
 
 export default axios.create({
   baseURL: BASE_URL
